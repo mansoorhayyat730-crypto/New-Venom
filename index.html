@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070707">
+<meta name="description" content="Venom Editz — premium animated creator hub.">
+<title>VENOM EDITZ — Premium Motion</title>
+<style>
+:root{--bg:#070707;--gold:#f4c64e;--gold2:#ffe9a3;--white:#f7f4ec;--muted:#a9a59a;--line:rgba(244,198,78,.23);--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(244,198,78,.13),transparent 42%),radial-gradient(ellipse at 0% 65%,rgba(115,75,10,.1),transparent 38%),#070707}
+#particles,#grid{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#particles{z-index:-1;opacity:.65}#grid{z-index:-2;opacity:.18;background-image:linear-gradient(rgba(244,198,78,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(244,198,78,.07) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 85%);animation:gridMove 28s linear infinite}
+a{color:inherit}
+.topline{height:2px;background:linear-gradient(90deg,transparent,var(--gold2),var(--gold),transparent);box-shadow:0 0 20px #f4c64e88;animation:linePulse 4s ease-in-out infinite}
+header{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);background:#080808b8;border-bottom:1px solid #ffffff0d}
+.nav-wrap{width:min(1120px,92%);margin:auto;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:1000;font-size:1.18rem;letter-spacing:.16em;text-decoration:none;color:var(--gold);text-shadow:0 0 18px #f4c64e55;animation:brandBreathe 4s ease-in-out infinite}
+.brand span{color:#fff}
+.nav{display:flex;align-items:center;gap:24px}.nav a{position:relative;text-decoration:none;color:#c9c5b9;font-size:.88rem;transition:color .3s}.nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--gold);transition:right .35s var(--ease)}.nav a:hover{color:var(--gold2)}.nav a:hover:after{right:0}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:9px;color:var(--gold);padding:9px 11px}
+.hero{position:relative;min-height:680px;width:min(1120px,92%);margin:auto;display:grid;place-items:center;text-align:center;padding:90px 0 100px}
+.hero:before,.hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid #f4c64e14;border-radius:50%;pointer-events:none;animation:orbit 24s linear infinite}
+.hero:after{width:390px;height:390px;border-style:dashed;animation-direction:reverse;animation-duration:45s}
+.hero-inner{position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 14px;border:1px solid var(--line);border-radius:100px;background:#f4c64e0a;color:var(--gold2);font-size:.72rem;letter-spacing:.19em;text-transform:uppercase;animation:fadeUp 1s var(--ease) both}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold);animation:dotPulse 1.8s ease-in-out infinite}
+h1{margin:26px 0 16px;font-size:clamp(3rem,10vw,7.7rem);line-height:.92;letter-spacing:-.065em;font-weight:1000;background:linear-gradient(110deg,#fff 5%,#ffeeb6 20%,#d9a52d 38%,#fff9db 51%,#b98111 68%,#fff0ad 84%,#fff);background-size:300% auto;color:transparent;background-clip:text;-webkit-background-clip:text;filter:drop-shadow(0 0 28px #f4c64e1c);animation:metalSweep 8s linear infinite,heroReveal 1.1s var(--ease) both}
+.hero-sub{font-size:clamp(1rem,2.2vw,1.25rem);color:#d0cabb;letter-spacing:.07em;margin:0 0 14px;animation:fadeUp 1s .2s var(--ease) both}
+.hero p{max-width:640px;margin:0 auto;color:var(--muted);line-height:1.9;font-size:.98rem;animation:fadeUp 1s .35s var(--ease) both}
+.actions{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:30px;animation:fadeUp 1s .5s var(--ease) both}
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:9px;text-decoration:none;font-size:.85rem;font-weight:850;letter-spacing:.03em;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.btn:before{content:"";position:absolute;inset:0;z-index:-1;transform:translateX(-120%);background:linear-gradient(100deg,transparent,#ffffff55,transparent);transition:transform .65s var(--ease)}.btn:hover:before{transform:translateX(120%)}.btn:hover{transform:translateY(-4px);box-shadow:0 10px 34px #f4c64e21}
+.btn.primary{background:linear-gradient(120deg,#f4c64e,#ffe9a3,#dba629);color:#171106;border:1px solid #ffe9a3}.btn.secondary{background:#ffffff05;color:var(--gold2);border:1px solid #f4c64e66}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:#817b6b;text-transform:uppercase;letter-spacing:.2em;font-size:.65rem;display:flex;align-items:center;gap:10px}.scroll-hint:after{content:"";height:28px;width:1px;position:absolute;top:24px;left:50%;background:linear-gradient(var(--gold),transparent);animation:scrollLine 1.8s ease-in-out infinite}
+main{width:min(1060px,92%);margin:auto}
+.section{padding:52px 0 28px}
+.section-head{text-align:center;margin:0 auto 30px}.kicker{color:var(--gold);font-size:.7rem;letter-spacing:.23em;text-transform:uppercase}.section-head h2{font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.04em;margin:10px 0}.section-head h2 span{color:var(--gold)}.section-head p{margin:0;color:var(--muted);line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{position:relative;isolation:isolate;overflow:hidden;border:1px solid var(--line);border-radius:17px;padding:26px;background:linear-gradient(145deg,#1a1915e8,#0b0b0bea);opacity:1;transform:translateY(0) scale(1);transition:opacity .8s var(--ease),transform .8s var(--ease),border-color .35s,box-shadow .35s}
+.card.show{opacity:1;transform:translateY(0) scale(1)}.card:before{content:"";position:absolute;z-index:-1;width:260px;height:260px;right:-130px;top:-150px;border-radius:50%;background:radial-gradient(circle,#f4c64e25,transparent 68%);transition:transform .6s var(--ease)}.card:after{content:"";position:absolute;top:0;left:-110%;width:60%;height:100%;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,#fff2,transparent);transition:left .8s var(--ease);pointer-events:none}.card:hover{transform:translateY(-8px) scale(1.012);border-color:#f4c64e99;box-shadow:0 20px 55px #0009,0 0 35px #f4c64e0d}.card:hover:before{transform:scale(1.3)}.card:hover:after{left:150%}
+.card-top{display:flex;align-items:center;gap:15px}.iconbox{height:56px;width:56px;flex:0 0 56px;display:grid;place-items:center;border-radius:14px;border:1px solid #f4c64e40;background:linear-gradient(145deg,#f4c64e18,#f4c64e04);color:var(--gold);box-shadow:inset 0 0 18px #f4c64e08;transition:transform .4s var(--ease),box-shadow .4s}.card:hover .iconbox{transform:rotate(-6deg) scale(1.06);box-shadow:0 0 24px #f4c64e1f}.iconbox svg{width:27px;height:27px;fill:currentColor}.card h3{font-size:1.25rem;margin:0 0 5px}.handle{color:#a9a397;font-size:.88rem;overflow-wrap:anywhere}.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:26px;padding-top:17px;border-top:1px solid #ffffff10}.tag{font-size:.7rem;color:#aaa697;letter-spacing:.06em}.visit{color:var(--gold2);font-weight:800;font-size:.84rem;text-decoration:none;transition:letter-spacing .3s,color .3s}.visit:hover{letter-spacing:.04em;color:#fff}
+.feature-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:34px 0 54px}.feature{border:1px solid #ffffff10;border-radius:13px;padding:19px 14px;text-align:center;background:#ffffff03;transition:transform .3s,border-color .3s,background .3s}.feature:hover{transform:translateY(-5px);border-color:var(--line);background:#f4c64e07}.feature strong{display:block;color:var(--gold2);font-size:.94rem;margin-bottom:6px}.feature span{font-size:.76rem;color:#8f8a7d}
+.about{position:relative;overflow:hidden;text-align:center;padding:34px 24px;margin:8px 0 76px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(120deg,#f4c64e0c,#ffffff02,#f4c64e08);background-size:200% 200%;animation:softBackground 12s ease infinite}.about h2{margin:0 0 12px;font-size:1.7rem}.about h2 span{color:var(--gold)}.about p{max-width:680px;margin:auto;color:var(--muted);line-height:1.85}
+.notice{font-size:.81rem;line-height:1.7;color:#9e998d;padding:14px 16px;margin:22px 0 0;border:1px solid #ffffff0d;border-radius:10px;background:#ffffff03}.notice strong{color:#e4d3a0}
+footer{border-top:1px solid #ffffff10;text-align:center;padding:24px 5%;font-size:.78rem;color:#716d63}footer strong{color:var(--gold);letter-spacing:.12em}
+body.motion-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}body.motion-ready .reveal.show{opacity:1;transform:translateY(0)}
+@keyframes metalSweep{to{background-position:300% center}}@keyframes heroReveal{from{opacity:0;transform:translateY(25px) scale(.96);filter:blur(8px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes brandBreathe{0%,100%{text-shadow:0 0 7px #f4c64e2b}50%{text-shadow:0 0 20px #f4c64e99}}@keyframes dotPulse{0%,100%{opacity:1;box-shadow:0 0 6px var(--gold)}50%{opacity:.5;box-shadow:0 0 17px var(--gold)}}@keyframes linePulse{0%,100%{opacity:.65}50%{opacity:1}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes gridMove{to{background-position:54px 54px}}@keyframes scrollLine{0%,100%{transform:scaleY(.5);transform-origin:top;opacity:.4}50%{transform:scaleY(1);opacity:1}}@keyframes softBackground{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@media(max-width:680px){.nav-wrap{min-height:68px}.menu-btn{display:block}.nav{display:none;position:absolute;left:4%;right:4%;top:68px;padding:17px;background:#111;border:1px solid var(--line);border-radius:12px;flex-direction:column;gap:18px}.nav.open{display:flex}.hero{min-height:600px;padding:80px 0}.hero:before{width:220px;height:220px}.hero:after{width:300px;height:300px}.cards{grid-template-columns:1fr}.card{padding:22px}.feature-strip{grid-template-columns:1fr;gap:9px}.feature{padding:15px}.section{padding-top:35px}.scroll-hint{bottom:17px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.card,.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="topline"></div><div id="grid" aria-hidden="true"></div><canvas id="particles" aria-hidden="true"></canvas>
+<header><div class="nav-wrap">
+<a class="brand" href="#home">VENOM <span>EDITZ</span></a>
+<button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰ MENU</button>
+<nav class="nav" id="nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#socials">Socials</a><a href="#about">About</a></nav>
+</div></header>
+<section class="hero" id="home"><div class="hero-inner">
+<div class="eyebrow"><span class="dot"></span> THE CREATOR EXPERIENCE</div>
+<h1>VENOM<br>EDITZ</h1>
+<div class="hero-sub">CREATE. EDIT. DOMINATE.</div>
+<p>Want your brand to stand out? Promote your business with Venom Editz and put your products in front of an engaged audience. Let’s create eye-catching promotions that get people talking.</p>
+<div class="actions"><a class="btn primary" href="#socials">EXPLORE CHANNELS <span>↘</span></a><a class="btn secondary" href="https://wa.me/923295721430" target="_blank" rel="noopener noreferrer">BOOK A PROMOTION ↗</a></div>
+</div><div class="scroll-hint">SCROLL TO EXPLORE</div></section>
+<main>
+<section class="section" id="socials">
+<div class="section-head reveal"><div class="kicker">CONNECT WITH US</div><h2>OUR <span>PLATFORMS</span></h2><p>Find us across the socials and never miss a new upload.</p></div>
+<div class="cards">
+<article class="card">
+<div class="card-top"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.4v13.67a2.9 2.9 0 0 1-2.9 2.9 2.9 2.9 0 1 1 2.9-2.9c0-.17-.02-.34-.05-.5V11.7a6.3 6.3 0 1 0 3.45 5.62V9.5a8.2 8.2 0 0 0 4.8 1.54V7.65a4.85 4.85 0 0 1-1.03-.96Z"/></svg></div><div><h3>TikTok</h3><div class="handle">@geniusfacts2</div></div></div>
+<div class="card-bottom"><span class="tag">SHORT-FORM CONTENT</span><a class="visit" href="https://www.tiktok.com/@geniusfacts2" target="_blank" rel="noopener noreferrer">VISIT PROFILE ↗</a></div>
+</article>
+<article class="card">
+<div class="card-top"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></div><div><h3>YouTube</h3><div class="handle">@factzilla1122-p9j</div></div></div>
+<div class="card-bottom"><span class="tag">VIDEOS & MORE</span><a class="visit" href="https://youtube.com/@factzilla1122-p9j" target="_blank" rel="noopener noreferrer">VISIT CHANNEL ↗</a></div>
+</article>
+<article class="card">
+<div class="card-top"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg></div><div><h3>Instagram</h3><div class="handle">@venom.editz6</div></div></div>
+<div class="card-bottom"><span class="tag">REELS & UPDATES</span><a class="visit" href="https://www.instagram.com/venom.editz6/" target="_blank" rel="noopener noreferrer">VISIT PROFILE ↗</a></div>
+</article>
+<article class="card">
+<div class="card-top"><div class="iconbox"><svg viewBox="0 0 24 24"><path d="M12.04 2A9.94 9.94 0 0 0 3.5 17.05L2 22l5.1-1.46A10 10 0 1 0 12.04 2Zm0 18.2a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.03.87.9-2.95-.2-.31A8.2 8.2 0 1 1 12.04 20.2Zm4.5-6.14c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.56.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.15-.25-.02-.39.11-.52.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.32-.23.25-.88.86-.88 2.09s.9 2.42 1.03 2.59c.13.17 1.77 2.7 4.28 3.78.6.26 1.07.41 1.43.52.6.19 1.15.16 1.58.1.48-.07 1.48-.61 1.69-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29Z"/></svg></div><div><h3>WhatsApp</h3><div class="handle">Promotion inquiries</div></div></div>
+<div class="card-bottom"><span class="tag">LET’S WORK TOGETHER</span><a class="visit" href="https://wa.me/923295721430" target="_blank" rel="noopener noreferrer">CHAT WITH US ↗</a></div>
+</article>
+</div>
+<div class="feature-strip">
+<div class="feature reveal"><strong>✦ PREMIUM MOTION</strong><span>Fluid transitions throughout</span></div>
+<div class="feature reveal"><strong>✦ GOLDEN ATMOSPHERE</strong><span>Animated glow and particles</span></div>
+<div class="feature reveal"><strong>✦ RESPONSIVE DESIGN</strong><span>Built for mobile and desktop</span></div>
+</div>
+<p class="notice reveal"><strong>Analytics note:</strong> Live follower counts, views, and other account statistics are not connected yet. They require an official supported API and, in some cases, a secure backend. This page does not display invented numbers.</p>
+</section>
+<section class="about reveal" id="about"><h2>GIVE YOUR BRAND THE <span>SPOTLIGHT</span></h2><p>Looking to promote a product, page, or business? Partner with Venom Editz for creative promotional content designed to grab attention. Message us on WhatsApp to discuss your promotion.</p><div class="actions"><a class="btn primary" href="https://wa.me/923295721430?text=Hi%20Venom%20Editz%2C%20I%27m%20interested%20in%20a%20promotion." target="_blank" rel="noopener noreferrer">DISCUSS A PROMOTION ↗</a></div></section>
+</main>
+<footer>© <span id="year"></span> <strong>VENOM EDITZ</strong> · ALL RIGHTS RESERVED</footer>
+<script>
+document.body.classList.add('motion-ready');
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const revealEls=document.querySelectorAll('.card,.reveal');
+if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add(e.target.classList.contains('card')?'show':'show');io.unobserve(e.target)}}),{threshold:.12});revealEls.forEach(el=>io.observe(el));}else revealEls.forEach(el=>el.classList.add('show'));
+const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');let w=0,h=0,pts=[];const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function resize(){const d=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;canvas.width=w*d;canvas.height=h*d;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(d,0,0,d,0,0);pts=Array.from({length:Math.min(70,Math.floor(w/16))},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.35,v:Math.random()*.32+.08,dx:(Math.random()-.5)*.22,a:Math.random()*.5+.12}));}
+function frame(){ctx.clearRect(0,0,w,h);for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(244,198,78,${p.a})`;ctx.fill();p.y-=p.v;p.x+=p.dx;if(p.y< -5){p.y=h+5;p.x=Math.random()*w}if(p.x< -5)p.x=w+5;if(p.x>w+5)p.x=-5}if(!reduced)requestAnimationFrame(frame)}
+resize();frame();addEventListener('resize',resize,{passive:true});
+</script>
+</body>
+</html>
